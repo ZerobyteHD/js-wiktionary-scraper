@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target":"ESNext",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "skipLibCheck": true,
+        "outDir": "./",
+        "outFile": "index.cjs"
+    },
+    "files": [
+        "src/index.ts"
+    ]
+}

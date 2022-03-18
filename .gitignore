@@ -102,3 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+#NODEJS lock files
+package-lock.json
+
+#tsc compiled files
+index.cjs
+index.js
