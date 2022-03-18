@@ -1,4 +1,4 @@
-import {getWiktionaryPage} from "index";
+import { API } from "js-wiktionary-scraper";
 
-var x = await getWiktionaryPage("test");
+var x = await API("test");
 console.log(x);
