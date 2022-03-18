@@ -7,8 +7,7 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "skipLibCheck": true,
-        "outDir": "./",
-        "outFile": "index.cjs"
+        "outDir": "./"
     },
     "files": [
         "src/index.ts"
