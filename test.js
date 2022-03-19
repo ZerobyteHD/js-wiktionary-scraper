@@ -1,4 +1,5 @@
-import { API } from "js-wiktionary-scraper";
+import WiktionaryScraper from "js-wiktionary-scraper";
 
-var x = await API("test");
-console.log(x);
+const api = new WiktionaryScraper();
+var word_data = await api.fetchData("tank", "English");
+console.log(word_data);

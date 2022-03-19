@@ -4,10 +4,9 @@
         "module": "ES6",
         "moduleResolution": "node",
         "noImplicitAny": true,
-        "removeComments": true,
         "preserveConstEnums": true,
-        "skipLibCheck": true,
-        "outDir": "./"
+        "outDir": "./",
+        "declaration": true
     },
     "files": [
         "src/index.ts"

@@ -3,13 +3,16 @@
         "target":"ESNext",
         "module": "commonjs",
         "moduleResolution": "node",
-        "noImplicitAny": true,
-        "removeComments": true,
+        "noImplicitAny": false,
         "preserveConstEnums": true,
-        "skipLibCheck": true,
-        "outDir": "./"
+        "outDir": "./",
+        "declaration": true
     },
     "files": [
         "src/index.ts"
+    ],
+    "typeRoots": [
+        "./typings",
+        "./node_modules/@types/"
     ]
 }

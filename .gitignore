@@ -109,3 +109,4 @@ package-lock.json
 #tsc compiled files
 index.cjs
 index.js
+index.d.ts
