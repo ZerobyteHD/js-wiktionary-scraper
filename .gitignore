@@ -110,3 +110,5 @@ package-lock.json
 index.cjs
 index.js
 index.d.ts
+
+build/

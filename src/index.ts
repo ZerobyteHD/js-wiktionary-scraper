@@ -3,7 +3,7 @@
  * @license MIT
  */
 
-import fetch from "node-fetch2";
+import fetch from "node-fetch";
 import { JSDOM } from "jsdom";
 
 export interface WiktionarySearchResult {

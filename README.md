@@ -2,7 +2,7 @@
 Javascript (ES6/CJS) Wiktionary HTML Scraper
 
 ## Usage
-### As a ES6 module:
+### As an ES6 module:
 ```js
 import WiktionaryScraper from "js-wiktionary-scraper";
 ```
@@ -15,7 +15,7 @@ const WiktionaryScraper = require("js-wiktionary-scraper").default;
 import WiktionaryScraper from "js-wiktionary-scraper";
 
 const api = new WiktionaryScraper();
-var word_data = await api.fetchData("despair", "English");
+var word_data = await api.fetchData("tank", "English");
 console.log(word_data);
 ```
 ### Will print:
