@@ -21,42 +21,42 @@ console.log(word_data);
 ### Will print:
 ```json
 {
-  error: null,
-  url: 'https://en.wiktionary.org/wiki/tank',
-  alternatives: null,
-  etymology: [
-    'From Portuguese tanque (“tank, liquid container”), originally from Indian vernacular for a large artificial water reservoir, cistern, pool, etc., for example, Gujarati ટાંકી (ṭā̃kī) or Marathi टाकी (ṭākī).
- the Arabic verb اِسْتَنْقَعَ‎ (istanqaʿa, “to become stagnant, to stagnate”).',
-    'In the sense of armoured vehicle, prototypes were described as tanks for carrying water [from 1915] to disguise their nature as well as due to physical resemblance.',
-    '(This etymology is missing or incomplete. Please add to it, or discuss it at the Etymology scriptorium.)'
+  "error": null,
+  "url": "https://en.wiktionary.org/wiki/tank",
+  "alternatives": null,
+  "etymology": [
+    "From Portuguese tanque (“tank, liquid container”), originally from Indian vernacular for a large artificial water reservoir, cistern, pool, etc., for example, Gujarati ટાંકી (ṭā̃kī) or Marathi टाकी (ṭākī).
+ the Arabic verb اِسْتَنْقَعَ‎ (istanqaʿa, “to become stagnant, to stagnate”).",
+    "In the sense of armoured vehicle, prototypes were described as tanks for carrying water [from 1915] to disguise their nature as well as due to physical resemblance.",
+    "(This etymology is missing or incomplete. Please add to it, or discuss it at the Etymology scriptorium.)"
   ],
-  pronunciation: [
-    { IPA: '/tæŋk/', audio: null, type: null },
+  "pronunciation": [
+    { "IPA": "/tæŋk/", "audio": null, "type": null },
     {
-      IPA: null,
-      audio: '/wiki/File:En-au-tank.ogg',
-      type: 'Audio (AU)'
+      "IPA": null,
+      "audio": "/wiki/File:En-au-tank.ogg",
+      "type": "Audio (AU)"
     }
   ],
-  rhymes: 'Rhymes: -æŋk',
-  images: [
+  "rhymes": "Rhymes: -æŋk",
+  "images": [
     {
-      url: '/wiki/File:Defense.gov_News_Photo_041027-F-2034C-010.jpg',
-      caption: 'A military tank.'
+      "url": "/wiki/File:Defense.gov_News_Photo_041027-F-2034C-010.jpg",
+      "caption": "A military tank."
     }
   ],
-  meanings: {
-    preposition: null,
-    proper_noun: null,
-    adjective: null,
-    adverb: null,
-    verb: {
-      head: 'tank (third-person singular simple present tanks, present participle tanking, simple past and past participle tanked)',
-      meanings: [Array]
+  "meanings": {
+    "preposition": null,
+    "proper_noun": null,
+    "adjective": null,
+    "adverb": null,
+    "verb": {
+      "head": "tank (third-person singular simple present tanks, present participle tanking, simple past and past participle tanked)",
+      "meanings": [Array]
     },
-    noun: { head: 'tank (plural tanks)', meanings: [Array] },
-    conjunction: null,
-    particle: null
+    "noun": { "head": "tank (plural tanks)", "meanings": [Array] },
+    "conjunction": null,
+    "particle": null
   }
 }
 ```
