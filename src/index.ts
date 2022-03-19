@@ -54,9 +54,6 @@ export interface WiktionaryDataResult {
     meanings: WiktionaryMeaningsData|null;
 }
 
-const EmptyWiktionaryDataResult:WiktionaryDataResult = {error: null, url: null, alternatives:null, etymology:null, pronunciation:null, rhymes:null, images:null, meanings:null};
-const EmptyWiktionaryMeaningsData:WiktionaryMeaningsData = {preposition:null, proper_noun:null, adjective:null, adverb:null, verb: null, noun:null, conjunction:null, particle:null};
-
 /**
  * Search for wiktionary pages
  * @param query The search query
@@ -134,7 +131,7 @@ export function MWMeaningSectionParser(subsectionName:string, currentData:Wiktio
     // Is it the headword?
     if(hostElement.querySelector(".headword")) {
         if(!currentData.meanings) {
-            currentData.meanings = EmptyWiktionaryMeaningsData;
+            currentData.meanings = {preposition:null, proper_noun:null, adjective:null, adverb:null, verb: null, noun:null, conjunction:null, particle:null};
         }
         // @ts-ignore
         if(!currentData.meanings[internal_sub_name]) {
@@ -183,10 +180,12 @@ export function identifySubsectionHeader(subheaderId:string):string|null {
  * @param firstRun Recursive helper that indicates the first run
  * @returns Current Data
  */
-export function wikiMWElementParser(MWElement:Element, currentData:WiktionaryDataResult=EmptyWiktionaryDataResult, sectionName:string="None", firstRun:boolean=true):WiktionaryDataResult {
+export function wikiMWElementParser(MWElement:Element, currentData:WiktionaryDataResult, sectionName:string="None", firstRun:boolean=true):WiktionaryDataResult {
+
     if(MWElement == null)return currentData;
     if(!firstRun && MWElement.tagName == "H2" && MWElement?.children[0]?.classList.contains("mw-headline")) {
         // found new section
+        console.log("Lastly: ", currentData);
         return currentData;
     }
     firstRun = false;
@@ -282,7 +281,7 @@ export async function parseWiki(wiki_url:string, languageId:string):Promise<Wikt
         return {alternatives:null, url:wiki_url, etymology:null, images:null, pronunciation:null, rhymes:null, meanings:null, error:"Could not find language section "+languageId};
     }
 
-    var d = EmptyWiktionaryDataResult;
+    var d:WiktionaryDataResult = {error: null, url: null, alternatives:null, etymology:null, pronunciation:null, rhymes:null, images:null, meanings:null};
     d.url = wiki_url;
 
     var data = wikiMWElementParser(mw_lang_head, d);
@@ -319,6 +318,7 @@ export default class WiktionaryScraper {
         var page = await getWiktionaryPage(query, this.subdomain);
         if(page.success) {
             var data = await parseWiki(page.link, languageId);
+            console.log("Returned to fetchData: ", data);
             return data;
         } else {
             return {error: page.error, etymology:null, pronunciation:null, url:null, alternatives:null, rhymes:null, images:null, meanings:null};

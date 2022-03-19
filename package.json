@@ -1,7 +1,7 @@
 {
   "name": "js-wiktionary-scraper",
-  "version": "1.2.1",
-  "description": "An HTML wiktionary scraper",
+  "version": "1.2.5",
+  "description": "An HTML to JSON wiktionary scraper. It returns the available data for a specified word that is manifested on en.wiktionary.org.",
   "type": "module",
   "main": "index.cjs",
   "module": "index.js",
@@ -18,7 +18,14 @@
     "url": "git+https://github.com/ZerobyteHD/js-wiktionary-scraper.git"
   },
   "keywords": [
-    "Scraping"
+    "Scraping",
+    "JSON",
+    "API",
+    "wiktionary",
+    "scraper",
+    "wiki",
+    "word",
+    "data"
   ],
   "author": "zerobyte",
   "license": "MIT",
