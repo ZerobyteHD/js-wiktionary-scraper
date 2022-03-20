@@ -1,6 +1,12 @@
 # js-wiktionary-scraper
 Javascript (ES6/CJS) Wiktionary HTML Scraper
 
+## Note:
+Please always install the latest version of the package with the following command
+```
+> npm i js-wiktionary-scraper@latest
+```
+
 ## Usage
 ### As an ES6 module:
 ```js
