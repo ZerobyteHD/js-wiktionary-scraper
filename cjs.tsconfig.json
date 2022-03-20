@@ -9,7 +9,7 @@
         "declaration": true
     },
     "files": [
-        "src/index.ts"
+        "build-cache/index.ts"
     ],
     "typeRoots": [
         "./typings",

@@ -72,6 +72,3 @@ npm run tsc-es6
 npm run tsc-cjs
 ```
 3. Rename index.js to index.cjs
-**Note:** Of course, you must have TSC installed and added to PATH (for windows)
-
-**Warning**: This project is at an early stage of work-in-progress. Even the most recent version is likely to have serious bugs.

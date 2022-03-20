@@ -112,3 +112,4 @@ index.js
 index.d.ts
 
 build/
+build-cache/

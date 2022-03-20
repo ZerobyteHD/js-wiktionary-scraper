@@ -185,7 +185,6 @@ export function wikiMWElementParser(MWElement:Element, currentData:WiktionaryDat
     if(MWElement == null)return currentData;
     if(!firstRun && MWElement.tagName == "H2" && MWElement?.children[0]?.classList.contains("mw-headline")) {
         // found new section
-        console.log("Lastly: ", currentData);
         return currentData;
     }
     firstRun = false;
@@ -318,7 +317,6 @@ export default class WiktionaryScraper {
         var page = await getWiktionaryPage(query, this.subdomain);
         if(page.success) {
             var data = await parseWiki(page.link, languageId);
-            console.log("Returned to fetchData: ", data);
             return data;
         } else {
             return {error: page.error, etymology:null, pronunciation:null, url:null, alternatives:null, rhymes:null, images:null, meanings:null};
