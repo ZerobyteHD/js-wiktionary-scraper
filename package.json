@@ -1,6 +1,6 @@
 {
   "name": "js-wiktionary-scraper",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "An HTML to JSON wiktionary scraper. It returns the available data for a specified word that is manifested on en.wiktionary.org.",
   "type": "module",
   "main": "index.cjs",

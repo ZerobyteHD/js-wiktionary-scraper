@@ -6,6 +6,36 @@
 import fetch from "node-fetch";
 import { JSDOM } from "jsdom";
 
+export class WikiMediaResource extends String {
+    raw:string;
+    constructor(str:string="") {
+        super(str);
+        this.raw = str;
+    }
+    async getFullMedia():Promise<string|null> {
+        // valid URL?
+        try {
+            new URL("https://en.wiktionary.org/"+this.raw);
+        } catch(e:any) {
+            return null;
+        }
+        // try fetching
+        var res:any;
+        try {
+            res = await fetch("https://en.wiktionary.org/"+this.raw);
+        } catch(e:any) {
+            return null;
+        }
+        var html = await res.text();
+        var doc = new JSDOM(html).window.document;
+        var url = doc.querySelector(".fullMedia .internal")?.getAttribute("href");
+        if(!url?.startsWith("https")) {
+            url = url?.replace("//","https://");
+        }
+        return url;
+    }
+}
+
 export interface WiktionarySearchResult {
     link: string|null;
     success: boolean;
@@ -17,13 +47,13 @@ export interface WiktionaryAlternativesData {
 }
 
 export interface WiktionaryImagesData {
-    url: string;
+    url: WikiMediaResource;
     caption: string;
 }
 
 export interface WiktionaryPronunciationData {
     IPA: string|null;
-    audio: string|null;
+    audio: WikiMediaResource|null;
     type: string|null;
 }
 
@@ -214,7 +244,7 @@ export function wikiMWElementParser(MWElement:Element, currentData:WiktionaryDat
                     object.IPA = ipa ? ipa.textContent : null;
 
                     var audio = li.querySelector(".audiometa > a");
-                    object.audio = audio ? audio.getAttribute("href") : null;
+                    object.audio = audio ? new WikiMediaResource(audio.getAttribute("href")) : null;
 
                     var type = li.querySelector(".unicode") as HTMLElement;
                     object.type = type ? type.textContent : null;
@@ -230,7 +260,7 @@ export function wikiMWElementParser(MWElement:Element, currentData:WiktionaryDat
         // is image
         if(!currentData.images)currentData.images = [];
         var image = {
-            url: MWElement.querySelector("a.image")?.getAttribute("href"),
+            url: new WikiMediaResource(MWElement.querySelector("a.image")?.getAttribute("href")),
             caption: MWElement.querySelector(".thumbcaption")?.textContent
         }
         currentData.images.push(image);

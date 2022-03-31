@@ -1,22 +1,28 @@
 # js-wiktionary-scraper
-Javascript (ES6/CJS) Wiktionary HTML Scraper
+
+Javascript (ES6/CJS) Wiktionary JSON Scraper
 
 ## Note:
+
 Please always install the latest version of the package with the following command
 ```
 > npm i js-wiktionary-scraper@latest
 ```
 
 ## Usage
+
 ### As an ES6 module:
+
 ```js
 import WiktionaryScraper from "js-wiktionary-scraper";
 ```
 ### As a CommonJS module:
+
 ```js
 const WiktionaryScraper = require("js-wiktionary-scraper").default;
 ```
 ### Example:
+
 ```js
 import WiktionaryScraper from "js-wiktionary-scraper";
 
@@ -24,7 +30,9 @@ const api = new WiktionaryScraper();
 var word_data = await api.fetchData("tank", "English");
 console.log(word_data);
 ```
+
 ### Will print:
+
 ```json
 {
   "error": null,
